@@ -10,7 +10,7 @@ default = "No Value Present"
 
 
 print("Content-Type: text/html")
-print()
+print("")
 
 body = """<html>
 <head>
