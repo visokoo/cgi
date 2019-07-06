@@ -3,7 +3,16 @@ import cgi
 import cgitb
 
 cgitb.enable()
+form = cgi.FieldStorage()
+operands = form.getlist('operand')
 
-print("Content-type: text/plain")
-print()
-print("Your job is to make this work")
+print("Content-Type: text/plain")
+print("")
+
+if operands:
+    sum = 0
+    for operand in operands:
+        sum += int(operand)
+    print(sum)
+else:
+    print("No total calculated as no operands are provided.")
